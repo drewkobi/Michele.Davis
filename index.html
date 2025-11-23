@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Michele Davis · Traveling Educator & Field Support</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Michele Davis – traveling educator, expedition instructor, and production support specialist available for international and on-location assignments."
+  />
+
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-soft: #0b1022;
+      --accent: #1ea3ff;
+      --accent-soft: rgba(30, 163, 255, 0.12);
+      --text-main: #f5f5f7;
+      --text-muted: #9ea4b8;
+      --card-bg: #0f172a;
+      --border-subtle: rgba(148, 163, 184, 0.25);
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.85);
+      --radius-xl: 18px;
+      --radius-pill: 999px;
+      --transition-fast: 0.18s ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 48%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px 20px 60px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0 10px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(2, 6, 23, 0.96),
+        rgba(2, 6, 23, 0.7),
+        transparent
+      );
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, #e0f2fe, #1ea3ff);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.9);
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #1ea3ff, #38bdf8);
+      border-radius: 999px;
+      transition: width var(--transition-fast);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a:hover {
+      color: var(--text-main);
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      gap: 36px;
+      padding: 34px 0 30px;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: var(--radius-pill);
+      padding: 6px 10px 6px 6px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.7);
+      margin-bottom: 14px;
+    }
+
+    .hero-badge-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at 25% 20%, #e0f2fe, #1ea3ff);
+      color: #0b1120;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .hero-badge-text {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 3.3vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin-bottom: 10px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, #38bdf8, #22c55e);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      max-width: 540px;
+      margin-bottom: 20px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.6);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 18px;
+      margin-bottom: 14px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: var(--radius-pill);
+      border: none;
+      padding: 10px 18px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: radial-gradient(circle at 10% 0, #38bdf8, #1d4ed8);
+      color: #e5f7ff;
+      box-shadow: 0 14px 30px rgba(30, 64, 175, 0.85);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+        filter var(--transition-fast);
+    }
+
+    .btn-primary span {
+      font-size: 1.1rem;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(30, 64, 175, 0.95);
+      filter: brightness(1.05);
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 14px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(15, 23, 42, 0.7);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: background var(--transition-fast), border-color var(--transition-fast),
+        color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.95);
+      border-color: rgba(148, 163, 184, 0.9);
+      color: var(--text-main);
+      transform: translateY(-1px);
+    }
+
+    .hero-metadata {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-metadata strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    /* HERO RIGHT */
+    .hero-right {
+      position: relative;
+    }
+
+    .card-hero {
+      border-radius: 24px;
+      padding: 18px 18px 16px;
+      background: radial-gradient(circle at top, #111827, #020617);
+      border: 1px solid rgba(148, 163, 184, 0.38);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .card-hero::before {
+      content: "";
+      position: absolute;
+      inset: -60%;
+      background: radial-gradient(circle at 10% 0, rgba(56, 189, 248, 0.3), transparent 60%),
+        radial-gradient(circle at 90% 100%, rgba(45, 212, 191, 0.18), transparent 55%);
+      opacity: 0.6;
+      z-index: -1;
+    }
+
+    .hero-stat-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .hero-chip {
+      font-size: 0.76rem;
+      padding: 4px 9px;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      color: var(--text-muted);
+    }
+
+    .hero-location {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: right;
+    }
+
+    .hero-location span {
+      color: var(--accent);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .stat-box {
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.85);
+      padding: 10px 10px 8px;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .stat-value {
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .stat-note {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .hero-destinations {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .hero-destinations strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .hero-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 0.75rem;
+    }
+
+    .hero-pill {
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      color: var(--text-muted);
+    }
+
+    /* SECTION GENERIC */
+    section {
+      padding: 20px 0;
+    }
+
+    .section-heading {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .section-description {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-bottom: 16px;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      padding: 16px 16px 14px;
+      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.85);
+    }
+
+    .card + .card {
+      margin-top: 12px;
+    }
+
+    .card-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .card-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .card-meta {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .card p {
+      font-size: 0.86rem;
+      color: #e5e7eb;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      color: var(--text-muted);
+    }
+
+    /* SKILLS GRID */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+      font-size: 0.85rem;
+    }
+
+    .skills-category {
+      border-radius: 14px;
+      padding: 10px 10px 8px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .skills-category h4 {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .skills-category ul {
+      list-style: none;
+      font-size: 0.83rem;
+      color: #e5e7eb;
+    }
+
+    .skills-category li + li {
+      margin-top: 3px;
+    }
+
+    /* CONTACT */
+    .contact-card {
+      margin-top: 10px;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+
+    .contact-item label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .contact-item span {
+      font-weight: 500;
+    }
+
+    .contact-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    footer {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      padding-top: 24px;
+      border-top: 1px solid rgba(51, 65, 85, 0.9);
+      margin-top: 24px;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-right {
+        order: -1;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding-inline: 16px;
+      }
+      .grid-two {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .card,
+      .card-hero {
+        padding: 14px 12px 12px;
+      }
+      .section-title {
+        font-size: 1.05rem;
+      }
+      .hero-title {
+        font-size: 2.05rem;
+      }
+      nav {
+        font-size: 0.78rem;
+        gap: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">
+        <span class="logo-dot"></span>
+        MICHELE DAVIS
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#services">How I Help</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <div class="hero-badge">
+            <div class="hero-badge-icon">✈</div>
+            <div class="hero-badge-text">
+              Traveling Educator · Expedition Instructor · Field Support
+            </div>
+          </div>
+
+          <h1 class="hero-title">
+            I help <span>kids and teens thrive</span> while their families or crews travel the world.
+          </h1>
+
+          <p class="hero-subtitle">
+            I’m Michele Davis, a Florida-certified teacher with 15+ years of experience, ready to join
+            private families, expedition teams, and TV/film productions as a
+            traveling educator, mentor, and on-location support.
+          </p>
+
+          <div class="hero-tags">
+            <span class="tag">K–12 Multi-Subject Teacher</span>
+            <span class="tag">College & Essay Coach</span>
+            <span class="tag">Caribbean & Latin America Experience</span>
+            <span class="tag">Calm in Remote/Island Settings</span>
+          </div>
+
+          <div class="cta-row">
+            <a href="#contact" class="btn-primary">
+              <span>●</span> Request Availability
+            </a>
+            <a href="#services" class="btn-ghost">
+              View how I support families & crews →
+            </a>
+          </div>
+
+          <div class="hero-metadata">
+            <strong>Based:</strong> Sarasota, Florida ·
+            <strong>Travel:</strong> Available for multi-month international assignments ·
+            <strong>Languages:</strong> English, conversational Spanish
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="card-hero">
+            <div class="hero-stat-row">
+              <span class="hero-chip">On-location ready</span>
+              <div class="hero-location">
+                Currently in <span>Sarasota, FL</span><br />
+                <small>Passport ready · 100% travel OK</small>
+              </div>
+            </div>
+
+            <div class="stats-grid">
+              <div class="stat-box">
+                <div class="stat-label">Experience</div>
+                <div class="stat-value">15+ years</div>
+                <div class="stat-note">Secondary & K–12 teaching</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-label">Focus</div>
+                <div class="stat-value">Teens</div>
+                <div class="stat-note">Structure, support & coaching</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-label">Settings</div>
+                <div class="stat-value">Remote</div>
+                <div class="stat-note">Islands · Eco-lodges · Ships</div>
+              </div>
+            </div>
+
+            <p class="hero-destinations">
+              <strong>Recent regions:</strong> Panama, Costa Rica, Belize,
+              Jamaica, Uruguay, Mexico, Argentina, Chile.
+            </p>
+            <div class="hero-pill-row">
+              <span class="hero-pill">Florida-certified English & Social Sciences</span>
+              <span class="hero-pill">Psychology, Sociology & HOPE</span>
+              <span class="hero-pill">ESOL / ELL & Reading</span>
+              <span class="hero-pill">Business, Finance & Marketing</span>
+              <span class="hero-pill">@travelwithdavis on TikTok</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT / EXPERIENCE -->
+      <section id="about">
+        <div class="section-heading">About</div>
+        <h2 class="section-title">Who I am & how I work on the move</h2>
+        <p class="section-description">
+          I’m a veteran educator, mentor, and youth coach who specializes in
+          keeping students grounded, engaged, and on track academically while the
+          adults around them do big things — film shoots, expeditions, relocations,
+          sabbaticals, or complex travel schedules.
+        </p>
+
+        <div class="grid-two">
+          <div>
+            <div class="card">
+              <div class="card-title">High School Educator & Mentor</div>
+              <div class="card-subtitle">
+                Suncoast Polytechnical High School · Sarasota, FL
+              </div>
+              <div class="card-meta">English 4 · Applied Communications · 2018–Present</div>
+              <p>
+                I teach seniors in a small, high-performing magnet school and
+                support them through graduation, college applications, and major
+                life transitions. I’m comfortable with both high-achieving and
+                struggling students, and I’m known for balancing warmth with clear
+                structure.
+              </p>
+              <div class="pill-row">
+                <span class="pill">Common App & essay coaching</span>
+                <span class="pill">College & scholarship advising</span>
+                <span class="pill">Executive-function support</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-title">International & Remote Environment Experience</div>
+              <div class="card-meta">Caribbean · Central & South America</div>
+              <p>
+                I’ve spent extensive time in Panama, Costa Rica, Belize, Jamaica,
+                Uruguay, Mexico, Argentina, and Chile, including research into
+                eco-lodge management, relocation, and long-term travel. I’m used to
+                boats, small planes, unpredictable weather, and working with kids
+                and teens in unfamiliar environments.
+              </p>
+              <div class="pill-row">
+                <span class="pill">Remote/island logistics</span>
+                <span class="pill">Multicultural classrooms</span>
+                <span class="pill">Comfortable on boats & ferries</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card">
+              <div class="card-title">Champions Voice · Co-Founder</div>
+              <div class="card-subtitle">Youth confidence & communication coaching</div>
+              <div class="card-meta">Workshops · 1:1 coaching · Online content</div>
+              <p>
+                I help teens master their inner voice, build confidence, and turn
+                setbacks into fuel. This work translates directly to travel
+                environments, where kids and teens need emotional support as much
+                as academic structure.
+              </p>
+              <div class="pill-row">
+                <span class="pill">Public speaking & presence</span>
+                <span class="pill">Mindset & resilience</span>
+                <span class="pill">@travelwithdavis on TikTok</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-title">Certifications (Florida)</div>
+              <p>
+                English 6–12 · Social Sciences 6–12 · Psychology · Sociology ·
+                World & American History · Government & Economics · HOPE (Health/PE)
+                · Business & Marketing · Computer Science · ESOL/ELL & Reading
+                Endorsement · Spanish 1–3 · Personal Finance · Law Studies.
+              </p>
+              <div class="pill-row">
+                <span class="pill">Multi-subject K–12 support</span>
+                <span class="pill">Flexible curriculum design</span>
+                <span class="pill">Individualized learning plans</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SERVICES / HOW I HELP -->
+      <section id="services">
+        <div class="section-heading">How I Help</div>
+        <h2 class="section-title">
+          Support for families, production companies, and expedition teams
+        </h2>
+        <p class="section-description">
+          Every assignment is unique. Below are the core ways I can plug into your
+          world — whether you are a private family, a travel program, or a TV/film
+          production with staff and children on location.
+        </p>
+
+        <div class="grid-two">
+          <div>
+            <div class="skills-grid">
+              <div class="skills-category">
+                <h4>For private families</h4>
+                <ul>
+                  <li>Traveling tutor / governess for 1–3 children</li>
+                  <li>Custom curriculum aligned with home country standards</li>
+                  <li>Daily routines, structure & gentle accountability</li>
+                  <li>College prep, essays & long-term planning</li>
+                </ul>
+              </div>
+
+              <div class="skills-category">
+                <h4>For productions</h4>
+                <ul>
+                  <li>On-set educator for minors</li>
+                  <li>Academic continuity during shoots</li>
+                  <li>Talent support: emotional & routine stability</li>
+                  <li>Basecamp assistance & light logistics</li>
+                </ul>
+              </div>
+
+              <div class="skills-category">
+                <h4>For expeditions</h4>
+                <ul>
+                  <li>Field instructor for teen & student trips</li>
+                  <li>Briefings, reflection sessions & journaling</li>
+                  <li>Risk-aware supervision and group cohesion</li>
+                  <li>Community & cultural learning modules</li>
+                </ul>
+              </div>
+
+              <div class="skills-category">
+                <h4>For youth</h4>
+                <ul>
+                  <li>Mindset coaching during big transitions</li>
+                  <li>Working with anxiety, perfectionism, self-doubt</li>
+                  <li>Personal leadership & communication skills</li>
+                  <li>Support for first-gen & high-achieving students</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="card contact-card" id="experience">
+              <div class="card-title">Ideal assignments</div>
+              <p>
+                Multi-week or multi-month placements where young people need both
+                academic guidance and a steady adult presence as their world
+                changes around them. I’m especially well-suited to:
+              </p>
+              <ul style="margin-top: 8px; padding-left: 18px; font-size: 0.86rem;">
+                <li>Families traveling between homes or on sabbatical</li>
+                <li>TV/film crews based in remote or island locations</li>
+                <li>Ship- or yacht-based schooling arrangements</li>
+                <li>Teen travel programs & educational expeditions</li>
+              </ul>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 8px;">
+                I’m happy to discuss unique setups and help you design the right
+                educational and support structure for your specific situation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="section-heading">Contact</div>
+        <h2 class="section-title">Let’s talk about your next journey</h2>
+        <p class="section-description">
+          Share a little about your family, production, or expedition — where
+          you’re headed, the ages of any children/teens involved, and your ideal
+          timeframe. I’ll respond with my availability and a suggested way we
+          could structure support.
+        </p>
+
+        <div class="card contact-card">
+          <div class="contact-row">
+            <div class="contact-item">
+              <label>Email</label>
+              <span><a href="mailto:m.davistravelstheworld@gmail.com">m.davistravelstheworld@gmail.com</a></span>
+            </div>
+            <div class="contact-item">
+              <label>Phone / WhatsApp</label>
+              <span><a href="tel:+19412663425">+1-941-266-3425</a></span>
+            </div>
+            <div class="contact-item">
+              <label>Social</label>
+              <span>@travelwithdavis on TikTok</span>
+            </div>
+          </div>
+
+          <div class="contact-note">
+            When you reach out, it helps if you include:
+            destination(s), dates, number/ages of children or students, and whether
+            you’re seeking tutoring, full-time schooling, field instruction, or
+            general youth support.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Michele Davis. Traveling Educator & Field Support.
+      Designed as a simple one-page portfolio.
+    </footer>
+  </div>
+
+  <script>
+    // Update year automatically
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
